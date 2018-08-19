@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <title>Pakistan News -- Top stories from all major media outlets</title>
+</head>
+<body>
+  <nav class="top-nav">
+    <!-- navbar -->
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Pakistan News Api</a>
+        <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="" id="geonews">Geo News</a></li>
+            <li><a href="" id="arynews">Ary News</a></li>
+            <li><a href="" id="dunyanews">Dunya News</a></li>
+            <li><a href="" id="dawnnews">Dawn News</a></li>
+            <li><a href="" id="dailypakistan">Daily Pakistan News</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- navbar ends -->
+  
+    <!-- mobile navbar -->
+    <ul class="sidenav" id="mobile">
+        <li><a href="#" id="geonews" class="sidenav-close">Geo News</a></li>
+        <li><a href="#" id="arynews" class="sidenav-close">Ary News</a></li>
+        <li><a href="#" id="dunyanews" class="sidenav-close">Dunya News</a></li>
+        <li><a href="#" id="dawnnews" class="sidenav-close">Dawn News</a></li>
+        <li><a href="#" id="dailypakistan" class="sidenav-close">Daily Pakistan News</a></li>
+    </ul>
+    <!-- mobilenavbar ends -->
+
+    <!-- top story container -->
+    <div class="row top-story"></div>
+    <!-- top story container ends -->
+
+    <!-- main-news -->
+    <div class="row main-news"></div>
+    <!-- main news ends here -->
+    
+    <!-- footer -->
+    <footer>
+      <p>Imran Rafique</p>
+    </footer>
+    <!-- footer ends -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script src="./js/nav_trigger.js"></script>
+  <script src="./js/fetch-api.js"></script>
+</body>
+</html>

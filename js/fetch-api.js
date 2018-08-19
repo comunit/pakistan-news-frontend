@@ -4,6 +4,7 @@ let main_News = document.querySelector('.main-news');
 let welcomePage = document.querySelector('.welcome-page');
 let welcomePageH2 = document.querySelector('.welcome-page-h2');
 let allLinks = document.querySelectorAll('.get-news');
+let logo = document.querySelector('.brand-logo');
 let source = '';
 let sourceArray = ['geonews', 'arynews', 'dunyanews', 'dawnnews', 'dailypakistan']
 
@@ -14,6 +15,7 @@ for (let i = 0; i < allLinks.length; i++) {
     if (e.target.id === news_link.id) {
       top_Story.innerHTML = '';
       main_News.innerHTML = '';
+      logo.innerHTML = news_link.innerHTML;
       fetchNews(e.target.id);
     }
   })

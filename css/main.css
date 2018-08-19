@@ -35,6 +35,11 @@
   height: 140px;
 }
 
+.welcome-page {
+  height: 74vh;
+  text-align: center;
+}
+
 footer {
   text-align: center;
   background-color: rgb(238, 110, 115);
@@ -47,6 +52,31 @@ footer p {
   font-size: 1.4rem;
   font-weight: bold;
   color: white;
+}
+
+
+/* spinners */
+.spinner-3:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 60px;
+  width: 60px;
+  margin-top: -30px;
+  margin-left: -30px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: coral;
+  border-bottom-color: coral;
+  animation: spinner 0.7s ease infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* media queries */
@@ -74,5 +104,17 @@ footer p {
 @media only screen and (min-width: 1050px) {
   .top-story-container {
     margin-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 1182px) {
+  .card-content {
+    padding: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .card-content {
+    display: none;
   }
 }

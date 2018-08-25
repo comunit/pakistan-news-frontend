@@ -6,6 +6,7 @@ let welcomePageH2 = document.querySelector('.welcome-page-h2');
 let allLinks = document.querySelectorAll('.get-news');
 let logo = document.querySelector('.brand-logo');
 let source = '';
+let onErrorPic = "http://www.raincityhousing.org/wordpress/wp-content/uploads/2013/04/NEWS_LogoRGB_FIN.jpg";
 let sourceArray = ['geonews', 'arynews', 'dunyanews', 'dawnnews', 'dailypakistan', 'expresstribune']
 
 for (let i = 0; i < allLinks.length; i++) {
@@ -47,7 +48,7 @@ function makeRequest(source) {
             if (data.topstory == true) {
               topStoryContent = `
         <div class="col m6 s12">
-          <img class="top-story-img" src="${data.image}">
+          <img class="top-story-img" onerror="this.src='${onErrorPic}'" src="${data.image}">
         </div>
         <div class="col m6 s12 top-story-container">
           <span class="new badge top-story-badge" data-badge-caption="Top Story"></span>
@@ -64,7 +65,7 @@ function makeRequest(source) {
           <div class="col s12 m4">
                <div class="card">
                  <div class="card-image">
-                   <img class="main-news-image" src="${data.image}">
+                   <img class="main-news-image" onerror="this.src='${onErrorPic}'" src="${data.image}">
                    <span class="card-title main-news-title">${data.title}</span>
                  </div>
                  <div class="card-content">
@@ -83,7 +84,7 @@ function makeRequest(source) {
           <div class="col s12 m4">
              <div class="card">
                <div class="card-image">
-                 <img class="main-news-image" src="${data.image}">
+                 <img class="main-news-image" onerror="this.src='${onErrorPic}'" src="${data.image}">
                  <span class="card-title main-news-title">${data.title}</span>
                </div>
                <div class="card-action">

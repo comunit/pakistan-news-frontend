@@ -6,7 +6,7 @@ let welcomePageH2 = document.querySelector('.welcome-page-h2');
 let allLinks = document.querySelectorAll('.get-news');
 let logo = document.querySelector('.brand-logo');
 let source = '';
-let sourceArray = ['geonews', 'arynews', 'dunyanews', 'dawnnews', 'dailypakistan']
+let sourceArray = ['geonews', 'arynews', 'dunyanews', 'dawnnews', 'dailypakistan', 'expresstribune']
 
 for (let i = 0; i < allLinks.length; i++) {
   const news_link = allLinks[i];

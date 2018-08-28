@@ -77,7 +77,14 @@
 .min-ago {
   position: absolute;
   bottom: 7%;
-  right: 36%;
+  right: 38%;
+  font-family: 'Exo', sans-serif;
+}
+
+.last-updated {
+  position: absolute;
+  top: 2%;
+  right: 38%;
   font-family: 'Exo', sans-serif;
 }
 
@@ -117,6 +124,11 @@
   .min-ago {
     bottom: 3%;
     right: 26%;
+  }
+
+  .last-updated {
+    top: -4%;
+    right: 30%;
   }
   
 }

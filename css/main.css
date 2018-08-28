@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .brand-logo {
   margin-left: 17px;
 }
@@ -108,7 +112,7 @@ footer p {
 
 @media only screen and (min-width: 1050px) {
   .top-story-container {
-    margin-top: 50px;
+    margin-top: 40px;
   }
 }
 

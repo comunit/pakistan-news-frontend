@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Exo');
+
+.radial-progress {
+  width: 450px;
+  height: 450px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 3px;
+}
+
+.radial-progress .circle .mask,
+.radial-progress .circle .fill {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  border-radius: 50%;
+  transition: -webkit-transform 1s;
+  transition: -ms-transform 1s;
+  transition: transform 1s !important;
+  -webkit-backface-visibility: hidden;
+}
+
+.radial-progress .circle .mask {
+  clip: rect(0px, 450px, 450px, 225px);
+}
+
+.radial-progress .circle .mask .fill {
+  clip: rect(0px, 225px, 450px, 0px);
+  background-color: #97a71d;
+}
+
+/* .circle .fill, .circle .mask.full {
+  animation: gorotate 10s linear infinite;
+  transform: rotate(180deg);
+}
+
+.circle .fill.fix {
+  animation: gorotate2 10s linear infinite;
+  transform: rotate(360deg);
+} */
+/* @keyframes gorotate {
+  to {
+    transform: rotate(180deg);
+  }
+} 
+
+@keyframes gorotate2 {
+  to {
+    transform: rotate(360deg);
+  }
+}  */
+/* number div starts here */
+.number-div {
+  position: absolute;
+  width: 402px;
+  height: 402px;
+  background: lightsalmon;
+  border-radius: 50%;
+  left: 5.6%;
+  top: 5%;
+  text-align: center;
+  margin: 0;
+}
+
+.minutes h1 {
+  font-size: 15rem;
+  font-family: 'Exo', sans-serif;
+}
+
+.minutes {
+  margin-top: 24%;
+  position: relative;
+}
+
+.min-ago {
+  position: absolute;
+  bottom: 7%;
+  right: 36%;
+  font-family: 'Exo', sans-serif;
+}
+
+@media only screen and (max-width: 490px) {
+  .radial-progress {
+    width: 250px;
+    height: 250px;
+  }
+
+  .radial-progress .circle .mask,
+  .radial-progress .circle .fill {
+    width: 250px;
+    height: 250px;
+  }
+
+  .radial-progress .circle .mask .fill {
+    clip: rect(0px, 125px, 250px, 0px);
+  }
+
+  .radial-progress .circle .mask {
+    clip: rect(0px, 250px, 250px, 125px);
+  }
+
+  .minutes {
+    margin-top: 20%;
+  }
+
+  .number-div {
+    width: 225px;
+    height: 225px;
+  }
+
+  .minutes h1 {
+    font-size: 8rem;
+  }
+
+  .min-ago {
+    bottom: 3%;
+    right: 26%;
+  }
+  
+}

@@ -5,6 +5,7 @@ let welcomePage = document.querySelector('.welcome-page');
 let welcomePageH2 = document.querySelector('.welcome-page-h2');
 let allLinks = document.querySelectorAll('.get-news');
 let logo = document.querySelector('.brand-logo');
+let progressCircle = document.querySelector('.radial-progress');
 let source = '';
 let onErrorPic = "http://www.raincityhousing.org/wordpress/wp-content/uploads/2013/04/NEWS_LogoRGB_FIN.jpg";
 let sourceArray = ['geonews', 'arynews', 'dunyanews', 'dawnnews', 'dailypakistan', 'expresstribune']
@@ -17,6 +18,7 @@ for (let i = 0; i < allLinks.length; i++) {
       top_Story.innerHTML = '';
       main_News.innerHTML = '';
       logo.innerHTML = news_link.innerHTML;
+      progressCircle.style.display = 'none';
       fetchNews(e.target.id);
     }
   })

@@ -22,7 +22,7 @@ $.get("https://pakstan-new-api.herokuapp.com/api/time", function(data) {
 setInterval(() => {
   $.get("https://pakstan-new-api.herokuapp.com/api/time", function(data) {
     var time = moment.utc(data, "ddd MMM D YYYY HH:mm:ss ZZ");
-    var updatedMinutes = moment().diff(time, "minutes");
+    var updatedMinutes = moment().diff(time, "mm");
     $(".minutes h1").html(updatedMinutes);
     for (i in transform_styles) {
       $(".circle .fill, .circle .mask.full").css(

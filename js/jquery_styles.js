@@ -21,10 +21,9 @@ $.get("https://pakstan-new-api.herokuapp.com/api/time", function(data) {
 
 setInterval(() => {
   $.get("https://pakstan-new-api.herokuapp.com/api/time", function(data) {
-    var time = moment(data, "ddd MMM D YYYY HH:mm:ss ZZ");
-    var getDiff = moment.duration(moment(time).diff(moment()));
-    var insertInHtml = getDiff.replace(/-/g, "");
-    $(".minutes h1").html(insertInHtml);
+    var time = moment.utc(data, "ddd MMM D YYYY HH:mm:ss ZZ");
+    var updatedMinutes = moment().diff(time, "minutes");
+    $(".minutes h1").html(updatedMinutes);
     for (i in transform_styles) {
       $(".circle .fill, .circle .mask.full").css(
         transform_styles[i],

@@ -65,7 +65,6 @@ footer p {
   color: white;
 }
 
-
 /* spinners */
 .spinner-3:before {
   content: "";
@@ -97,7 +96,7 @@ footer p {
   }
 
   .top-story-title {
-      font-size: 2.1rem;
+    font-size: 2.1rem;
   }
 
   .main-news-title {
@@ -114,8 +113,8 @@ footer p {
   }
   .welcome-page {
     height: 73vh;
+  }
 }
-
 
 @media only screen and (min-width: 1050px) {
   .top-story-container {

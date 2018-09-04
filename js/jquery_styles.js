@@ -23,11 +23,11 @@ setInterval(() => {
     for (i in transform_styles) {
       $(".circle .fill, .circle .mask.full").css(
         transform_styles[i],
-        "rotate(" + updatedMinutes * 9 + "deg)"
+        "rotate(" + data * 9 + "deg)"
       );
       $(".circle .fill.fix").css(
         transform_styles[i],
-        "rotate(" + updatedMinutes * 9 * 2 + "deg)"
+        "rotate(" + data * 9 * 2 + "deg)"
       );
     }
   });

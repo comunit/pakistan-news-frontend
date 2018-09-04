@@ -2,6 +2,7 @@ html,
 body {
   overflow-x: hidden;
   margin: 0;
+  height: 100%;
 }
 
 .content {
@@ -118,6 +119,7 @@ footer p {
   }
   .content {
     margin-bottom: -69px;
+    min-height: 100%;
   }
   body,
   html {

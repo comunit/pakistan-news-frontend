@@ -57,18 +57,17 @@ async function fetchNews(source) {
 function makeRequest(source) {
   //fetch data from api
   return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(
-        fetch(`https://pakstan-new-api.herokuapp.com/api/${source}`)
-          .then(res => res.json())
-          .then(data => {
-            data.forEach(data => {
-              if (data.topstory == true) {
-                topStoryContent = `
+    resolve(
+      fetch(`https://pakstan-new-api.herokuapp.com/api/${source}`)
+        .then(res => res.json())
+        .then(data => {
+          data.forEach(data => {
+            if (data.topstory == true) {
+              topStoryContent = `
           <div class="col m6 s12">
             <img class="top-story-img" onerror="this.src='${onErrorPic}'" src="${
-                  data.image
-                }">
+                data.image
+              }">
           </div>
           <div class="col m6 s12 top-story-container">
             <span class="new badge top-story-badge" data-badge-caption="Top Story"></span>
@@ -80,16 +79,16 @@ function makeRequest(source) {
             }" class="waves-effect waves-light btn">Read More</a>
           </div>
           `;
-                top_Story.innerHTML = topStoryContent;
-              } else if (data.description) {
-                {
-                  let content = `
+              top_Story.innerHTML = topStoryContent;
+            } else if (data.description) {
+              {
+                let content = `
             <div class="col s12 m4">
                  <div class="card">
                    <div class="card-image">
                      <img class="main-news-image" onerror="this.src='${onErrorPic}'" src="${
-                    data.image
-                  }">
+                  data.image
+                }">
                      <span class="card-title main-news-title">${
                        data.title
                      }</span>
@@ -103,16 +102,16 @@ function makeRequest(source) {
                  </div>
                </div>
             `;
-                  main_News.innerHTML += content;
-                }
-              } else {
-                let content = `
+                main_News.innerHTML += content;
+              }
+            } else {
+              let content = `
             <div class="col s12 m4">
                <div class="card">
                  <div class="card-image">
                    <img class="main-news-image" onerror="this.src='${onErrorPic}'" src="${
-                  data.image
-                }">
+                data.image
+              }">
                    <span class="card-title main-news-title">${data.title}</span>
                  </div>
                  <div class="card-action">
@@ -121,11 +120,10 @@ function makeRequest(source) {
                </div>
              </div>
           `;
-                main_News.innerHTML += content;
-              }
-            });
-          })
-      );
-    }, 5000);
+              main_News.innerHTML += content;
+            }
+          });
+        })
+    );
   });
 }

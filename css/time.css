@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Exo');
+@import url("https://fonts.googleapis.com/css?family=Exo");
 
 .radial-progress {
   width: 450px;
@@ -66,7 +66,7 @@
 
 .minutes h1 {
   font-size: 15rem;
-  font-family: 'Exo', sans-serif;
+  font-family: "Exo", sans-serif;
 }
 
 .minutes {
@@ -78,14 +78,14 @@
   position: absolute;
   bottom: 7%;
   right: 38%;
-  font-family: 'Exo', sans-serif;
+  font-family: "Exo", sans-serif;
 }
 
 .last-updated {
   position: absolute;
   top: 2%;
   right: 38%;
-  font-family: 'Exo', sans-serif;
+  font-family: "Exo", sans-serif;
 }
 
 @media only screen and (max-width: 490px) {
@@ -109,7 +109,7 @@
   }
 
   .minutes {
-    margin-top: 20%;
+    margin-top: 26%;
   }
 
   .number-div {
@@ -130,5 +130,4 @@
     top: -4%;
     right: 30%;
   }
-  
 }

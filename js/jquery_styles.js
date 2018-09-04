@@ -1,12 +1,10 @@
 var transform_styles = ["-webkit-transform", "-ms-transform", "transform"];
 
 $.get("https://pakstan-new-api.herokuapp.com/api/time", function(data) {
-  var initparseDate = new Date(data);
-  var initUpdatedMinutes = moment().diff(initparseDate, "minutes");
-  var rotation = initUpdatedMinutes * 9;
+  var rotation = data * 9;
   var fill_rotation = rotation;
   var fix_rotation = rotation * 2;
-  $(".minutes h1").html(initUpdatedMinutes);
+  $(".minutes h1").html(data);
   for (i in transform_styles) {
     $(".circle .fill, .circle .mask.full").css(
       transform_styles[i],
@@ -21,9 +19,7 @@ $.get("https://pakstan-new-api.herokuapp.com/api/time", function(data) {
 
 setInterval(() => {
   $.get("https://pakstan-new-api.herokuapp.com/api/time", function(data) {
-    var time = moment.utc(data, "ddd MMM D YYYY HH:mm:ss ZZ");
-    var updatedMinutes = moment().diff(time, "minutes");
-    $(".minutes h1").html(updatedMinutes);
+    $(".minutes h1").html(data);
     for (i in transform_styles) {
       $(".circle .fill, .circle .mask.full").css(
         transform_styles[i],

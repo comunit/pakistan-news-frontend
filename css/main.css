@@ -7,7 +7,6 @@ body {
 
 .content {
   min-height: 100%;
-  margin-bottom: -69px;
 }
 
 .brand-logo {
@@ -142,7 +141,7 @@ footer p {
 }
 
 @media screen and (max-height: 883px) {
-  .content {
-    margin-bottom: 0px;
+  .radial-progress {
+    margin-bottom: 125px !important;
   }
 }

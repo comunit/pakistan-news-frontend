@@ -143,6 +143,6 @@ footer p {
 
 @media screen and (max-height: 883px) {
   .content {
-    margin-bottom: 157px;
+    margin-bottom: 0px;
   }
 }

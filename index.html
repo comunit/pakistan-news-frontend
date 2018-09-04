@@ -13,92 +13,93 @@
 </head>
 
 <body>
-  <nav class="top-nav">
-    <!-- navbar -->
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Pakistan News API</a>
-      <a href="#" data-target="mobile" class="sidenav-trigger">
-        <i class="material-icons">menu</i>
-      </a>
-      <ul class="right hide-on-med-and-down">
-        <li>
-          <a href="" id="geonews" class="get-news">Geo News</a>
-        </li>
-        <li>
-          <a href="" id="arynews" class="get-news">Ary News</a>
-        </li>
-        <li>
-          <a href="" id="dunyanews" class="get-news">Dunya News</a>
-        </li>
-        <li>
-          <a href="" id="dawnnews" class="get-news">Dawn News</a>
-        </li>
-        <li>
-          <a href="" id="dailypakistan" class="get-news">Daily Pakistan News</a>
-        </li>
-        <li>
-          <a href="#" id="expresstribune" class="get-news">Express Tribune</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- navbar ends -->
+  <div class="content">
+    <nav class="top-nav">
+      <!-- navbar -->
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Pakistan News API</a>
+        <a href="#" data-target="mobile" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="" id="geonews" class="get-news">Geo News</a>
+          </li>
+          <li>
+            <a href="" id="arynews" class="get-news">Ary News</a>
+          </li>
+          <li>
+            <a href="" id="dunyanews" class="get-news">Dunya News</a>
+          </li>
+          <li>
+            <a href="" id="dawnnews" class="get-news">Dawn News</a>
+          </li>
+          <li>
+            <a href="" id="dailypakistan" class="get-news">Daily Pakistan News</a>
+          </li>
+          <li>
+            <a href="#" id="expresstribune" class="get-news">Express Tribune</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- navbar ends -->
 
-  <!-- mobile navbar -->
-  <ul class="sidenav" id="mobile">
-    <li>
-      <a href="#" id="geonews" class="sidenav-close get-news">Geo News</a>
-    </li>
-    <li>
-      <a href="#" id="arynews" class="sidenav-close get-news">Ary News</a>
-    </li>
-    <li>
-      <a href="#" id="dunyanews" class="sidenav-close get-news">Dunya News</a>
-    </li>
-    <li>
-      <a href="#" id="dawnnews" class="sidenav-close get-news">Dawn News</a>
-    </li>
-    <li>
-      <a href="#" id="dailypakistan" class="sidenav-close get-news">Daily Pakistan News</a>
-    </li>
-    <li>
-      <a href="#" id="expresstribune" class="sidenav-close get-news">Express Tribune</a>
-    </li>
-  </ul>
-  <!-- mobilenavbar ends -->
+    <!-- mobile navbar -->
+    <ul class="sidenav" id="mobile">
+      <li>
+        <a href="#" id="geonews" class="sidenav-close get-news">Geo News</a>
+      </li>
+      <li>
+        <a href="#" id="arynews" class="sidenav-close get-news">Ary News</a>
+      </li>
+      <li>
+        <a href="#" id="dunyanews" class="sidenav-close get-news">Dunya News</a>
+      </li>
+      <li>
+        <a href="#" id="dawnnews" class="sidenav-close get-news">Dawn News</a>
+      </li>
+      <li>
+        <a href="#" id="dailypakistan" class="sidenav-close get-news">Daily Pakistan News</a>
+      </li>
+      <li>
+        <a href="#" id="expresstribune" class="sidenav-close get-news">Express Tribune</a>
+      </li>
+    </ul>
+    <!-- mobilenavbar ends -->
 
-  <div class="welcome-page">
-    <h2 class="welcome-page-h2">Welcome To Pakistan News API</h2>
-    <span class="center updated-20">Updated every 20 minutes</span>
-    <div class="radial-progress">
-      <div class="circle">
-        <div class="mask full">
-          <div class="fill"></div>
+    <div class="welcome-page">
+      <h2 class="welcome-page-h2">Welcome To Pakistan News API</h2>
+      <span class="center updated-20">Updated every 20 minutes</span>
+      <div class="radial-progress">
+        <div class="circle">
+          <div class="mask full">
+            <div class="fill"></div>
+          </div>
+          <div class="mask half">
+            <div class="fill"></div>
+            <div class="fill fix"></div>
+          </div>
         </div>
-        <div class="mask half">
-          <div class="fill"></div>
-          <div class="fill fix"></div>
+
+        <div class="number-div">
+          <div class="minutes">
+            <h1>0</h1>
+            <span class="last-updated">Last updated</span>
+            <span class="min-ago">Minutes ago...</span>
+          </div>
         </div>
       </div>
-
-      <div class="number-div">
-        <div class="minutes">
-          <h1>0</h1>
-          <span class="last-updated">Last updated</span>
-          <span class="min-ago">Minutes ago...</span>
-        </div>
-      </div>
     </div>
+
+    <!-- top story container -->
+    <div class="row top-story"></div>
+    <!-- top story container ends -->
+
+    <!-- main-news -->
+    <div class="row main-news"></div>
+    <!-- main news ends here -->
   </div>
-
-  <!-- top story container -->
-  <div class="row top-story"></div>
-  <!-- top story container ends -->
-
-  <!-- main-news -->
-  <div class="row main-news"></div>
-  <!-- main news ends here -->
-
   <!-- footer -->
   <footer>
     <p>Imran Rafique</p>

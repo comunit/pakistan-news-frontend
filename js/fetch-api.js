@@ -6,6 +6,9 @@ let welcomePageH2 = document.querySelector(".welcome-page-h2");
 let allLinks = document.querySelectorAll(".get-news");
 let logo = document.querySelector(".brand-logo");
 let progressCircle = document.querySelector(".radial-progress");
+let content = document.querySelector(".content");
+let body = document.getElementsByTagName("body");
+let htmlTag = document.getElementsByTagName("html");
 let source = "";
 let onErrorPic =
   "http://www.raincityhousing.org/wordpress/wp-content/uploads/2013/04/NEWS_LogoRGB_FIN.jpg";
@@ -35,14 +38,17 @@ for (let i = 0; i < allLinks.length; i++) {
 async function fetchNews(source) {
   // show welcome//loading message
   welcomePage.style.display = "block";
-  welcomePage.style.height = "71.8vh";
+  // set body height to 100%
+  body[0].style.height = "100%";
+  htmlTag[0].style.height = "100%";
+  content.style.marginBottom = "-71px";
   // show loading message
   welcomePageH2.innerHTML = "Loading";
   // show spinners
   top_Story.classList.add("spinner-3");
   await makeRequest(source).then(() => {
     welcomePage.style.display = "none";
-    welcomePage.style.height = "104.5vh";
+    content.style.marginBottom = "0px";
     top_Story.classList.remove("spinner-3");
   });
 }
@@ -51,42 +57,63 @@ async function fetchNews(source) {
 function makeRequest(source) {
   //fetch data from api
   return new Promise(resolve => {
-    resolve(
-      fetch(`https://pakstan-new-api.herokuapp.com/api/${source}`)
-        .then(res => res.json())
-        .then(data => {
-          data.forEach(data => {
-            if (data.topstory == true) {
-              topStoryContent = `
-        <div class="col m6 s12">
-          <img class="top-story-img" onerror="this.src='${onErrorPic}'" src="${
-                data.image
-              }">
-        </div>
-        <div class="col m6 s12 top-story-container">
-          <span class="new badge top-story-badge" data-badge-caption="Top Story"></span>
-          <h3 class="top-story-title">${data.title}</h3>
-          <br>
-          <br>
-          <a href="${
-            data.link
-          }" class="waves-effect waves-light btn">Read More</a>
-        </div>
-        `;
-              top_Story.innerHTML = topStoryContent;
-            } else if (data.description) {
-              {
+    setTimeout(() => {
+      resolve(
+        fetch(`https://pakstan-new-api.herokuapp.com/api/${source}`)
+          .then(res => res.json())
+          .then(data => {
+            data.forEach(data => {
+              if (data.topstory == true) {
+                topStoryContent = `
+          <div class="col m6 s12">
+            <img class="top-story-img" onerror="this.src='${onErrorPic}'" src="${
+                  data.image
+                }">
+          </div>
+          <div class="col m6 s12 top-story-container">
+            <span class="new badge top-story-badge" data-badge-caption="Top Story"></span>
+            <h3 class="top-story-title">${data.title}</h3>
+            <br>
+            <br>
+            <a href="${
+              data.link
+            }" class="waves-effect waves-light btn">Read More</a>
+          </div>
+          `;
+                top_Story.innerHTML = topStoryContent;
+              } else if (data.description) {
+                {
+                  let content = `
+            <div class="col s12 m4">
+                 <div class="card">
+                   <div class="card-image">
+                     <img class="main-news-image" onerror="this.src='${onErrorPic}'" src="${
+                    data.image
+                  }">
+                     <span class="card-title main-news-title">${
+                       data.title
+                     }</span>
+                   </div>
+                   <div class="card-content">
+                     <p>${data.description}</p>
+                   </div>
+                   <div class="card-action">
+                     <a href="${data.link}">Read More</a>
+                   </div>
+                 </div>
+               </div>
+            `;
+                  main_News.innerHTML += content;
+                }
+              } else {
                 let content = `
-          <div class="col s12 m4">
+            <div class="col s12 m4">
                <div class="card">
                  <div class="card-image">
                    <img class="main-news-image" onerror="this.src='${onErrorPic}'" src="${
                   data.image
                 }">
                    <span class="card-title main-news-title">${data.title}</span>
-                 </div>
-                 <div class="card-content">
-                   <p>${data.description}</p>
                  </div>
                  <div class="card-action">
                    <a href="${data.link}">Read More</a>
@@ -96,26 +123,9 @@ function makeRequest(source) {
           `;
                 main_News.innerHTML += content;
               }
-            } else {
-              let content = `
-          <div class="col s12 m4">
-             <div class="card">
-               <div class="card-image">
-                 <img class="main-news-image" onerror="this.src='${onErrorPic}'" src="${
-                data.image
-              }">
-                 <span class="card-title main-news-title">${data.title}</span>
-               </div>
-               <div class="card-action">
-                 <a href="${data.link}">Read More</a>
-               </div>
-             </div>
-           </div>
-        `;
-              main_News.innerHTML += content;
-            }
-          });
-        })
-    );
+            });
+          })
+      );
+    }, 5000);
   });
 }

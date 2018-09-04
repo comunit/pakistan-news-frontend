@@ -1,5 +1,11 @@
+html,
 body {
   overflow-x: hidden;
+  margin: 0;
+}
+
+.content {
+  min-height: 100%;
 }
 
 .brand-logo {
@@ -40,7 +46,6 @@ body {
 }
 
 .welcome-page {
-  height: 104.5vh;
   text-align: center;
 }
 
@@ -111,8 +116,12 @@ footer p {
   .welcome-page-h2 {
     font-size: 2rem;
   }
-  .welcome-page {
-    height: 73vh;
+  .content {
+    margin-bottom: -69px;
+  }
+  body,
+  html {
+    height: 100%;
   }
 }
 

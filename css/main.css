@@ -145,3 +145,9 @@ footer p {
     margin-bottom: 125px !important;
   }
 }
+
+@media screen and (min-height: 883px) {
+  .content {
+    margin-bottom: -69px;
+  }
+}
